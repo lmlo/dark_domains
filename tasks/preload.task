@@ -1,0 +1,10 @@
+desc "Run examples (optional: rake spec[object])"
+task :spec, :object do |t, arg|
+  if arg.object
+    # When calling a single spec we probably want verbose output
+    sh "spec -c spec/#{ arg.object }_spec.rb --format specdoc"
+  else
+    # Otherwise, just the standard "show what fails"
+    sh "spec -c spec/*_spec.rb --format specdoc"
+  end
+end
