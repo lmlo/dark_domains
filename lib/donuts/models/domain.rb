@@ -13,17 +13,17 @@ class Domain
   
   # Return all of the banned domains
   def self.banned_domains
-    @@banned_domains ||= []
+    @@banned_domains ||= {}
   end
   
   # Return true if this is a known spam domain, false otherwise
   def self.banned?(suspect_domain)
-    banned_domains.include?(suspect_domain)
+    banned_domains[suspect_domain].eql?(true)
   end
 
   # Ban a domain
   def self.ban!(domain)
-    banned_domains << domain unless banned_domains.include?(domain)
+    banned_domains[domain] = true
   end
 
   # Instance
@@ -46,9 +46,9 @@ class Domain
   #===========================================================================
 
   # Load existing known bad spammer domains
-  def self.load_known_banned_domains
+  def self.load_blacklist
     # @todo make this pull from a dynamic source on the net or something
-    load_path = File.expand_path(File.join("lib", "donuts", "data", "spammers.txt"))
+    load_path = File.expand_path(File.join("lib", "donuts", "data", "blacklist.txt"))
     raise "unable to find spammers.txt data file: #{ load_path }" unless File.exists?(load_path)
     
     # Grab the domains and squash the newlines, 

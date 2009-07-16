@@ -10,4 +10,4 @@ script/destroy
 script/generate
 spec/domain_spec.rb
 spec/spec_helper.rb
-lib/donuts/data/spammers.txt
+lib/donuts/data/blacklist.txt
