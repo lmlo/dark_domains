@@ -8,6 +8,6 @@ lib/donuts/models/domain.rb
 script/console
 script/destroy
 script/generate
-spec/test_donuts.rb
-spec/test_helper.rb
+spec/domain_spec.rb
+spec/spec_helper.rb
 lib/donuts/data/spammers.txt
