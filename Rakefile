@@ -23,3 +23,12 @@ Dir['tasks/**/*.rake'].each { |t| load t }
 # TODO - want other tests/tasks run by default? Add them to the list
 # remove_task :default
 # task :default => [:spec, :features]
+
+# See: http://rspec.info/documentation/tools/rcov.html
+desc "Run all examples with RCov"
+Spec::Rake::SpecTask.new('coverage') do |t|
+  t.spec_opts = ['--format', 'specdoc', '-c']
+  t.spec_files = FileList['spec/*_spec.rb']
+  t.rcov = true
+  t.rcov_opts = ['--exclude', '/gems/,spec/']
+end
