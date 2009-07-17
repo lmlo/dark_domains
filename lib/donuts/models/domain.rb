@@ -75,7 +75,7 @@ class Domain
   
   # Path to the default blacklist
   def self.default_blacklist_path
-    File.expand_path(File.join("lib", "donuts", "data", "blacklist.txt"))
+    File.expand_path(File.join(__FILE__, "..", "..", "data", "blacklist.txt"))
   end
   
 end
