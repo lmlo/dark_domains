@@ -31,8 +31,28 @@ describe Domain do
       Domain.banned?(@banned_domain).should be_true
     end
     
+    it "should ignore protocol information from domains" do
+      Domain.banned?("http://#{ @banned_domain }").should be_true
+    end
+    
   end
 
+  context "(blacklists)" do
+    
+    it "should load an existing default blacklist" do
+      lambda do
+        begin
+          Domain.load_blacklist
+        end
+      end.should change(Domain.banned_domains, :size)
+    end
+    
+    it "should have the path to a default blacklist" do
+      File.exists?(Domain::default_blacklist_path).should be_true
+    end
+    
+  end
+  
   context "(instance)" do
     
     before do
