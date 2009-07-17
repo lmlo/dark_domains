@@ -29,8 +29,10 @@ class Domain
 
   # Return a normalized URL
   def self.normalized_domain(domain)
+    # Strip www subdomains, but leave others
+    domain = domain.gsub(/www\./, '')
     # Support protocols/ports/etc
-    (domain =~ DOMAIN_URI) ? domain : URI.parse(domain).host
+    domain =~ DOMAIN_URI ? domain : URI.parse(domain).host
   end
       
   # Instance

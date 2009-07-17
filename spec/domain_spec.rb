@@ -35,6 +35,10 @@ describe Domain do
       Domain.banned?("http://#{ @banned_domain }").should be_true
     end
     
+    it "should ignore www subdomain prefixes" do
+      Domain.banned?("www.#{ @banned_domain }").should be_true
+    end
+    
   end
 
   context "(blacklists)" do
