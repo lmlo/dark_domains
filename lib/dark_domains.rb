@@ -1,9 +1,9 @@
 $:.push File.join(File.dirname(__FILE__), '..', 'lib')
 
 # Version
-module Donuts
+module DarkDomains
   VERSION = '0.0.1'
 end
 
 # Easy require
-require "donuts/models/domain.rb"
+require "dark_domains/models/domain.rb"

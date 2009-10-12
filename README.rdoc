@@ -1,6 +1,6 @@
-= donuts
+= dark_domains
 
-* http://github.com/oftenvoid/donuts
+* http://github.com/oftenvoid/dark_domains
 
 == DESCRIPTION:
 
@@ -12,7 +12,7 @@ A Ruby plugin to load and query banned domains.
 
 == SYNOPSIS:
 
-  require "donuts"
+  require "dark_domains"
   
   # Ban a new domain
   Domain.ban!("socialface.com")
@@ -26,7 +26,7 @@ A Ruby plugin to load and query banned domains.
 
 == INSTALL:
 
-    sudo gem install donuts
+    sudo gem install dark_domains
 
 == LICENSE:
 

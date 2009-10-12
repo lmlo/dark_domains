@@ -3,11 +3,11 @@ Manifest.txt
 PostInstall.txt
 README.rdoc
 Rakefile
-lib/donuts.rb
-lib/donuts/models/domain.rb
+lib/dark_domains.rb
+lib/dark_domains/models/domain.rb
 script/console
 script/destroy
 script/generate
 spec/domain_spec.rb
 spec/spec_helper.rb
-lib/donuts/data/blacklist.txt
+lib/dark_domains/data/blacklist.txt

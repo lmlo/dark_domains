@@ -1,5 +1,5 @@
 $TESTING=true
 $:.push File.join(File.dirname(__FILE__), '..', 'lib')
 
-require "lib/donuts/models/domain.rb"
+require "lib/dark_domains/models/domain.rb"
 
