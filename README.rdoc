@@ -1,10 +1,10 @@
 = dark_domains
 
-* http://github.com/oftenvoid/dark_domains
+* http://github.com/lmlo/dark_domains
 
 == DESCRIPTION:
 
-A Ruby plugin to load and query banned domains.
+A Ruby plugin to load and query blacklisted domains.
 
 == FEATURES/PROBLEMS:
 
@@ -15,14 +15,14 @@ A Ruby plugin to load and query banned domains.
   require "dark_domains"
   
   # Ban a new domain
-  Domain.ban!("socialface.com")
+  Domain.ban!("domain.com")
   
   # Query a banned domain
-  Domain.banned?("socialface.com") => returns true
+  Domain.banned?("domain.com") => returns true
 
 == REQUIREMENTS:
 
-    (none)
+    sudo gem install rubigen hoe
 
 == INSTALL:
 
